@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "reinkuro"
+version = "0.1.0"
+description = ""
+authors = ["Bivi <190nano@gmail.com>"]
+build = "build.py"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+rich = "^10.5.0"
+pycryptodome = "^3.10.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-cov = "^2.12.1"
+pre-commit = "^2.13.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
