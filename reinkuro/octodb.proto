@@ -1,0 +1,32 @@
+syntax = "proto3";
+//protoc -I=. --python_out=. octodb.proto
+//"[Octo.Data.Item: id={0}, name={1}, size={2}, crc={3}, tags=[{4}], deps=[{5}], state={6}, md5={7}, objectName={8}, generation={9}"
+message Database {
+    int32 revision = 1;
+    repeated Data assetBundleList = 2;
+    repeated string _tagname = 3;
+    repeated Data resourceList = 4;
+    string urlFormat = 5;
+}
+
+message Data {
+    int32 id = 1; //id={0}
+    string filepath = 2;
+    string name = 3; //name={1}
+    int32 size = 4; //size={2}
+    uint32 crc = 5; //crc={3}
+    repeated int32 tags = 6; //tags=[{4}]
+    int32 priority = 7;
+    repeated int32 deps = 8; //deps=[{5}]
+    State state = 9; //state={6}?
+    string md5 = 10; //md5={7}
+    string objectName = 11; //objectName={8}
+    uint64 generation = 12; //generation={9}
+	enum State {
+		NONE = 0;
+		ADD = 1;
+		UPDATE = 2;
+		LATEST = 3;
+		DELETE = 4;
+	}
+}

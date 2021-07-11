@@ -9,11 +9,38 @@ build = "build.py"
 python = "^3.8"
 rich = "^10.5.0"
 pycryptodome = "^3.10.1"
+protobuf = "^3.17.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 pytest-cov = "^2.12.1"
 pre-commit = "^2.13.0"
+flake8 = "^3.9.2"
+black = {version = "^21.6b0", allow-prereleases = true}
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

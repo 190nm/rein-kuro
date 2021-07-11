@@ -1,5 +1,9 @@
 .vscode
 .python-version
+.pre-commit-config.yaml
+resources/
+octocacheevai
+exports/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

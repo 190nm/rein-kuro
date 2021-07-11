@@ -2,7 +2,8 @@
 
 from reinkuro._clibs import kuro
 
-def cryptbystring(input:bytes, mask:str) -> bytes:
+
+def cryptbystring(input: bytes, mask: str) -> bytes:
     """Decrypts assets by applying a byte mask to the file.
 
     Args:
