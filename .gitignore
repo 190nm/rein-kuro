@@ -2,6 +2,7 @@
 .python-version
 .pre-commit-config.yaml
 resources/
+caches/
 octocacheevai
 exports/
 # Byte-compiled / optimized / DLL files
