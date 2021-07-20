@@ -36,12 +36,12 @@ Move all of the files within to a folder in the script directory named `resource
 
 ## Decrypting all resources
 ```
-python reinkuro.py --decrypt --export all
+python reincli.py --decrypt --export all
 ```
 
 ## Decrypting new resources
 If it has been used before with an older cache version, the script may also decrypt only the new/changed resources found in the updated cache version.
 (This is the default behaviour)
 ```
-python reinkuro.py --decrypt
+python reincli.py --decrypt
 ```
