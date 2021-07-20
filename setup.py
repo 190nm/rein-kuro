@@ -22,7 +22,7 @@ packages = find_packages(exclude=["tests", "*.tests", "*.tests.*"])
 
 package_data = {"": ["*"], "reinkuro._clibs": ["kuro/*"]}
 
-install_requires = ["pycryptodome>=3.10.1,<4.0.0", "rich>=10.5.0,<11.0.0"]
+install_requires = ["pycryptodome>=3.10.1,<4.0.0", "rich>=10.5.0,<11.0.0", "protobuf>=3.17.3,<4.0.0"]
 
 setup_kwargs = {
     "name": "reinkuro",
