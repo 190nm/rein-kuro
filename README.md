@@ -1,8 +1,11 @@
 
 
 ## Installing
-Extract the release zip and run:
-```python setup.py install```
+Extract the release zip, then compile like so:
+
+```python setup.py build_ext --inplace```
+
+On windows you may need to install the [Python native development tools](https://docs.microsoft.com/en-us/visualstudio/python/installing-python-support-in-visual-studio?view=vs-2019#:~:text=Installs%20the%20C%2B%2B%20compiler%20and%20other%20necessary%20components) from visual studio first.
 
 ## Usage
 
