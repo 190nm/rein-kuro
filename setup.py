@@ -26,7 +26,7 @@ install_requires = ["pycryptodome>=3.10.1,<4.0.0", "rich>=10.5.0,<11.0.0", "prot
 
 setup_kwargs = {
     "name": "reinkuro",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Tools for working with Nier Reincarnation.",
     "long_description": None,
     "author": "Bivi",
@@ -39,6 +39,9 @@ setup_kwargs = {
     "install_requires": install_requires,
     "python_requires": ">=3.8,<4.0",
     "ext_modules": ext_modules,
+    "entry_points": {
+        "console_scripts": ["reincli = reinkuro.octo:main"],
+    },
 }
 
 build(setup_kwargs)
