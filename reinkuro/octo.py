@@ -405,7 +405,7 @@ def cli(__args__):
     elif __args__.decrypt == Decrypt.new:
         parse_difference(current, previous, localization=__args__.localization, decrypt=True)
     elif __args__.decrypt == Decrypt.all:
-        export_all(current)
+        export_all(current, localization=__args__.localization)
     else:  # Should be unreachable
         pass
 
