@@ -40,7 +40,7 @@ setup_kwargs = {
     "python_requires": ">=3.8,<4.0",
     "ext_modules": ext_modules,
     "entry_points": {
-        "console_scripts": ["reincli = reinkuro.octo:main"],
+        "console_scripts": ["reinkuro = reinkuro.octo:main"],
     },
 }
 
