@@ -26,7 +26,7 @@ install_requires = ["pycryptodome>=3.10.1,<4.0.0", "rich>=10.5.0,<11.0.0", "prot
 
 setup_kwargs = {
     "name": "reinkuro",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Tools for working with Nier Reincarnation.",
     "long_description": None,
     "author": "Bivi",
