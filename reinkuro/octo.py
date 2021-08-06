@@ -164,10 +164,17 @@ def decrypt_from_dict(asset_dict: dict, out_path: Path, localization: Enum):
         asset_dict (dict): Dictionary in the format ``"md5" : "name"``
         out_path (Path): The destination folder to write decrypted files to.
     """
-    contents = Path(f"resources/{localization}/").iterdir()
     # Filter for anything in the resources folder
     try:
-        to_decrypt = [path for path in contents if path.name in asset_dict]
+        contents = list(Path(f"resources/{localization}/").iterdir())
+        to_decrypt = []
+        # Expand all subdirectories
+        for path in contents:
+            if path.is_file():
+                if path.name in asset_dict:
+                    to_decrypt.append(path)
+            elif path.is_dir():
+                contents.extend(path.iterdir())
     except FileNotFoundError:
         console.print(
             f"[bold red]>>> [Error][/bold red] [bold]Folder [cyan]resources/{localization}/[/cyan] not found.[/bold] [bold red]<<<[/bold red]"
@@ -215,7 +222,7 @@ def export_all(cache: octodb_pb2.Database, localization: Enum):
     readable = {v["name"]: v["md5"] for k, v in current_dict["assetBundleList"].items()}
 
     export_folder = Path(f"exports/{localization}/v{cache.revision}_assets/")
-    export_folder.parent.mkdir(parents=True, exist_ok=True)
+    export_folder.mkdir(parents=True, exist_ok=True)
 
     export_folder.joinpath("db.json").write_text(json.dumps(readable, sort_keys=True, indent=4))
     decrypt_from_dict(all_assets, export_folder.joinpath("all"), localization)
